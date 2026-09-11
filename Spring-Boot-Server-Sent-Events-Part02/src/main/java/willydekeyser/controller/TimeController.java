@@ -24,12 +24,6 @@ public class TimeController {
             try {
                 while (true) {
                     emitter.send("Date: " + LocalDateTime.now().format(formatter));
-                	emitter.send(SseEmitter.event()
-                			.id("Testen")
-                			.comment("Comment")
-                			.name("test")
-                			.data("Date: " + LocalDateTime.now().format(formatter))
-                			.build());
                     Thread.sleep(1000);
                 }
             } catch (IOException | InterruptedException e) {
